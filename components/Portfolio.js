@@ -5,12 +5,28 @@ import Project from "./Project";
 const Portfolio = ({ blok }) => {
   const [activeTab, setActiveTab] = useState("ALL");
   const [filteredProjects, setFilteredProjects] = useState([]);
+  const [tabCounts, setTabCounts] = useState({});
   
-  const tabs = ["ALL", "SHOPIFY PLUS", "SHOPIFY", "SHOPIFY APPS", "WORDPRESS", "BIGCOMMERCE"];
+  const tabs = ["ALL", "SHOPIFY PLUS", "SHOPIFY", "SHOPIFY APPS", "WORDPRESS", "BIGCOMMERCE", "MERN", "NextJS"];
   
   useEffect(() => {
     if (!blok.Proj) return;
     
+    // Calculate counts for each tab
+    const counts = {};
+    counts["ALL"] = blok.Proj.length;
+    
+    tabs.forEach(tab => {
+      if (tab !== "ALL") {
+        counts[tab] = blok.Proj.filter(project => 
+          project.Stack && project.Stack.toUpperCase() === tab
+        ).length;
+      }
+    });
+    
+    setTabCounts(counts);
+    
+    // Filter projects based on active tab
     if (activeTab === "ALL") {
       setFilteredProjects(blok.Proj);
     } else {
@@ -19,12 +35,14 @@ const Portfolio = ({ blok }) => {
       );
       setFilteredProjects(filtered);
     }
-  }, [activeTab, blok.Proj]);
+  }, [activeTab, blok.Proj, tabs]);
   
   return (
     <section className="py-16 bg-black text-white" {...storyblokEditable(blok)}>
       <div className="container mx-auto px-8">
-        <h2 className="text-3xl font-bold mb-2">Portfolio</h2>
+        <div className="flex items-center justify-between mb-2">
+          <h2 className="text-3xl font-bold">Portfolio</h2>
+        </div>
         <div className="w-16 h-1 bg-red-600 mb-8"></div>
         
         {/* Tabs */}
@@ -39,7 +57,7 @@ const Portfolio = ({ blok }) => {
               }`}
               onClick={() => setActiveTab(tab)}
             >
-              {tab}
+              {tab} {tabCounts[tab] > 0 && `(${tabCounts[tab]})`}
             </button>
           ))}
         </div>

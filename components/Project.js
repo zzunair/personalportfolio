@@ -4,16 +4,17 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Project = ({ blok }) => {
-  return (
-    <div className="bg-gray-900 rounded-lg overflow-hidden shadow-lg" {...storyblokEditable(blok)}>
+  if (!blok) return null;
+  
+  const ProjectCard = (
+    <div className="bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300" {...storyblokEditable(blok)}>
       <div className="relative h-48 w-full">
         {blok?.Image && blok?.Image.filename ? (
           <Image 
             src={blok.Image.filename} 
-            alt={blok.Name} 
+            alt={blok.Name || "Project image"} 
             fill
-            width={450}
-            height={200}
+            layout="fill"
             className="object-cover"
           />
         ) : (
@@ -30,22 +31,21 @@ const Project = ({ blok }) => {
             {blok.Stack}
           </span>
         </div>
-        
         {blok.Description && blok.Description.content && (
           <p className="text-gray-400 mb-4">
-            {blok.Description.content[0]?.content?.[0]?.text || "No description available"}
+            {blok.Description.content[0]?.content?.[0]?.text || ""}
           </p>
-        )}
-        
-        {blok.Link && (
-          <Link href={blok.Link} target="_blank" rel="noopener noreferrer">
-            <div className="inline-block px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition-colors">
-              View Project
-            </div>
-          </Link>
         )}
       </div>
     </div>
+  );
+
+  return blok.Link ? (
+    <Link href={blok.Link} target="_blank" rel="noopener noreferrer">
+      {ProjectCard}
+    </Link>
+  ) : (
+    ProjectCard
   );
 };
 

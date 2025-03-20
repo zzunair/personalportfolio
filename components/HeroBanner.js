@@ -4,9 +4,9 @@ import logo from '../public/images/image.jpeg';
 
 const HeroBanner = () => {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-between min-h-screen bg-black text-white px-8 md:px-16 lg:px-24">
+    <div className="flex flex-col md:flex-row items-center justify-between min-h-screen bg-black text-white px-8 md:px-16 lg:px-24 w-full">
       {/* Left Content - Text */}
-      <div className="w-full md:w-1/2 mb-10 md:mb-0">
+      <div className="w-full md:w-1/2 mb-10 md:mb-0 mt-16 md:mt-0">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
           Zunair Shahid
         </h1>

@@ -5,7 +5,6 @@ import About from "../components/About";
 import Skills from "../components/Skills";
 import Resume from "../components/Resume";
 
-
 import {
   useStoryblokState,
   getStoryblokApi,
@@ -16,9 +15,9 @@ export default function Home({ story }) {
   story = useStoryblokState(story);
 
   return (
-    <div className="flex overflow-hidden">
-      <Header />
-      <main className="w-[calc(100%)] bg-black">
+    <div className="relative">
+      {/* <Header /> */}
+      <main className="w-full bg-black">
         <Head>
           <title>Zunair Shahid - Portfolio</title>
           <link rel="icon" href="/favicon.ico" />

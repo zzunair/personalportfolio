@@ -7,6 +7,7 @@ import Page from "../components/Page";
 import Teaser from "../components/Teaser";
 import Portfolio from '../components/Portfolio';
 import Project from '../components/Project';
+import { useState, useEffect } from 'react';
 
 const components = {
   feature: Feature,
@@ -27,10 +28,46 @@ storyblokInit({
 });
 
 function MyApp({ Component, pageProps }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Handle body scroll locking when menu is open on mobile
+  useEffect(() => {
+    if (isMenuOpen) {
+      // Save current scroll position
+      const scrollY = window.scrollY;
+      
+      // Apply styles to prevent scrolling
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = '100%';
+      document.body.style.overflow = 'hidden';
+    } else {
+      // Restore scrolling and position
+      const scrollY = document.body.style.top;
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      document.body.style.overflow = '';
+      
+      // Restore scroll position
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
+      }
+    }
+
+    return () => {
+      // Cleanup function to ensure scrolling is restored
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
+
   return (
-    <div className="flex">
-      <Header />
-      <main className="ml-[286px] w-[calc(100%-286px)]">
+    <div className={`relative ${isMenuOpen ? 'overflow-hidden h-screen' : ''}`}>
+      <Header isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />
+      <main className="w-full md:w-[calc(100%-286px)] md:ml-[286px]">
         <Component {...pageProps} />
       </main>
     </div>
