@@ -3,7 +3,7 @@ import { FiArrowRight } from 'react-icons/fi';
 
 const About = () => {
   return (
-    <section className="py-16 bg-black text-white">
+    <section id="about" className="py-16 bg-black text-white">
       <div className="container mx-auto px-8">
         <h2 className="text-3xl font-bold mb-2">About</h2>
         <div className="w-16 h-1 bg-red-600 mb-8"></div>
@@ -20,20 +20,20 @@ const About = () => {
           
           <div className="grid md:grid-cols-2 gap-8">
             <div>
-              <div className="flex items-center mb-4">
+              {/* <div className="flex items-center mb-4">
                 <FiArrowRight className="text-red-600 mr-2" />
                 <span className="font-medium">Birthday:</span>
                 <span className="ml-2">26 April 1995</span>
-              </div>
+              </div> */}
               <div className="flex items-center mb-4">
                 <FiArrowRight className="text-red-600 mr-2" />
                 <span className="font-medium">Website:</span>
-                <span className="ml-2">zunairsportfolio.com</span>
+                <span className="ml-2">saturnova.com</span>
               </div>
               <div className="flex items-center mb-4">
                 <FiArrowRight className="text-red-600 mr-2" />
                 <span className="font-medium">Phone:</span>
-                <span className="ml-2">+92322 4703700</span>
+                <span className="ml-2">+92 322 4703700</span>
               </div>
               <div className="flex items-center mb-4">
                 <FiArrowRight className="text-red-600 mr-2" />
@@ -43,11 +43,11 @@ const About = () => {
             </div>
             
             <div>
-              <div className="flex items-center mb-4">
+              {/* <div className="flex items-center mb-4">
                 <FiArrowRight className="text-red-600 mr-2" />
                 <span className="font-medium">Age:</span>
                 <span className="ml-2">29</span>
-              </div>
+              </div> */}
               <div className="flex items-center mb-4">
                 <FiArrowRight className="text-red-600 mr-2" />
                 <span className="font-medium">Degree:</span>

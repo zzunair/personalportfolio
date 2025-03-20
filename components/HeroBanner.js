@@ -1,10 +1,18 @@
 import React from 'react';
 import Image from 'next/image';
+import { FiChevronDown } from 'react-icons/fi';
 import logo from '../public/images/image.jpeg';
 
 const HeroBanner = () => {
+  const scrollToAbout = () => {
+    const aboutSection = document.querySelector('#about');
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div className="flex flex-col md:flex-row items-center justify-between min-h-screen bg-black text-white px-8 md:px-16 lg:px-24 w-full">
+    <div className="relative flex flex-col md:flex-row items-center justify-between min-h-screen bg-black text-white px-8 md:px-16 lg:px-24 w-full">
       {/* Left Content - Text */}
       <div className="w-full md:w-1/2 mb-10 md:mb-0 mt-16 md:mt-0">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
@@ -34,6 +42,15 @@ const HeroBanner = () => {
           />
         </div>
       </div>
+
+      {/* Scroll Down Arrow */}
+      <button 
+        onClick={scrollToAbout}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white cursor-pointer animate-bounce"
+        aria-label="Scroll to About section"
+      >
+        <FiChevronDown size={32} />
+      </button>
     </div>
   );
 };

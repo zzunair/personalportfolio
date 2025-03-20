@@ -74,27 +74,27 @@ const Header = ({ isOpen: propIsOpen, setIsOpen: propSetIsOpen }) => {
           
           {/* Social Media Links */}
           <div className="flex space-x-3">
-            <Link href="https://linkedin.com/">
+            <Link href="https://www.linkedin.com/in/zunair-shahid/" target='_blank'>
               <div className="w-8 h-8 rounded-full bg-[#1E2A3A] flex items-center justify-center hover:bg-blue-600 transition-colors">
                 <FaLinkedinIn />
               </div>
             </Link>
-            <Link href="https://github.com/">
+            <Link href="https://github.com/zzunair/">
               <div className="w-8 h-8 rounded-full bg-[#1E2A3A] flex items-center justify-center hover:bg-gray-700 transition-colors">
                 <FaGithub />
               </div>
             </Link>
-            <Link href="https://facebook.com/">
+            <Link href="https://www.facebook.com/ZzunairShahid/">
               <div className="w-8 h-8 rounded-full bg-[#1E2A3A] flex items-center justify-center hover:bg-blue-800 transition-colors">
                 <FaFacebookF />
               </div>
             </Link>
-            <Link href="https://instagram.com/">
+            {/* <Link href="https://instagram.com/">
               <div className="w-8 h-8 rounded-full bg-[#1E2A3A] flex items-center justify-center hover:bg-pink-600 transition-colors">
                 <FaInstagram />
               </div>
-            </Link>
-            <Link href="https://twitter.com/">
+            </Link> */}
+            <Link href="https://x.com/zunair_says">
               <div className="w-8 h-8 rounded-full bg-[#1E2A3A] flex items-center justify-center hover:bg-blue-400 transition-colors">
                 <FaTwitter />
               </div>

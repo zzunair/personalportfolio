@@ -30,21 +30,31 @@ const Skills = () => {
         
         <div className="grid md:grid-cols-2 gap-x-10">
           <div>
+            <SkillBar skill="SHOPIFY THEMES" percentage={100} />
+            <SkillBar skill="SHOPIFY APPS" percentage={100} />
+            <SkillBar skill="SHOPIFY HYDROGEN" percentage={90} />
+            <SkillBar skill="SHOPIFY EXTENSIONS" percentage={90} />
             <SkillBar skill="HTML" percentage={100} />
             <SkillBar skill="CSS" percentage={100} />
             <SkillBar skill="JAVASCRIPT" percentage={80} />
-            <SkillBar skill="JQUERY" percentage={90} />
-            <SkillBar skill="STORYBLOK CMS" percentage={70} />
             <SkillBar skill="VERSION CONTROLS" percentage={90} />
+            <SkillBar skill="MONGO DB" percentage={80} />
+
           </div>
           
           <div>
-            <SkillBar skill="SHOPIFY" percentage={100} />
-            <SkillBar skill="REACT.JS" percentage={70} />
-            <SkillBar skill="NEXT.JS" percentage={70} />
-            <SkillBar skill="NODE.JS" percentage={60} />
+            
+            <SkillBar skill="REACT.JS" percentage={80} />
+            <SkillBar skill="NEXT.JS" percentage={80} />
+            <SkillBar skill="NODE.JS" percentage={70} />
+            <SkillBar skill="JQUERY" percentage={90} />
+            <SkillBar skill="BIGCOMMERCE" percentage={80} />
             <SkillBar skill="WORDPRESS" percentage={80} />
-            <SkillBar skill="BIGCOMMERCE" percentage={70} />
+            <SkillBar skill="STORYBLOK CMS" percentage={70} />
+            <SkillBar skill="TAILWIND CSS" percentage={90} />
+            <SkillBar skill="FIREBASE DB" percentage={80} />
+
+
           </div>
         </div>
       </div>

@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import About from "../components/About";
 import Skills from "../components/Skills";
 import Resume from "../components/Resume";
+import Services from '../components/Services';
 
 import {
   useStoryblokState,
@@ -21,9 +22,13 @@ export default function Home({ story }) {
         <Head>
           <title>Zunair Shahid - Portfolio</title>
           <link rel="icon" href="/favicon.ico" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+          <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
         </Head>
         <HeroBanner />
         <About />
+        <Services />  {/* Add this line */}
         <Skills />
         <Resume />
         {story && <StoryblokComponent blok={story.content} />}

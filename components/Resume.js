@@ -40,9 +40,15 @@ const Resume = () => {
               subtitle="Skilled web developer with 6+ years of experience in designing and developing user-focused websites and web applications. Proficient in a variety of front-end and back-end technologies, and committed to delivering high-quality, polished digital products on time and within budget."
             >
               <ul className="list-disc pl-5 space-y-2">
-                <li>112C Topaz block, Park View city, Lahore, Pakistan</li>
-                <li>+92322 4703700</li>
-                <li>zunair700@gmail.com</li>
+                <li>Lahore, Pakistan</li>
+                <li>
+                  <a href="tel:+923224703700" className="hover:text-red-600 transition-colors">+92 322 4703700</a>
+                  {" • "}
+                  <a href="https://wa.me/923224703700" target="_blank" rel="noopener noreferrer" className="hover:text-red-600 transition-colors">WhatsApp</a>
+                </li>
+                <li>
+                  <a href="mailto:zunair700@gmail.com" className="hover:text-red-600 transition-colors">zunair700@gmail.com</a>
+                </li>
               </ul>
             </TimelineItem>
             
@@ -66,9 +72,24 @@ const Resume = () => {
             <h3 className="text-xl font-bold mb-6">Professional Experience</h3>
             
             <TimelineItem 
+              title="Shopify | BigCommerce | WordPress | FullStack Developer"
+              date="2024 - Present"
+              subtitle="Freelance | UpWork"
+            >
+              <ul className="list-disc pl-5 space-y-2">
+                <li>Working as a Shopify, BigCommerce, WooCommerce, and Full-stack developer on UpWork.</li>
+                <li>I've worked with more than 25 clients and 40+ shopify stores.</li>
+                <li>Specialize in delivering customized e-commerce solutions.</li>
+                <li>Collaborate with clients to enhance online stores and create seamless user experiences.</li>
+                <li>Focus on technical precision, responsiveness, and client-focused outcomes.</li>
+                <li>Contribute to the success of projects for businesses across diverse industries.</li>
+              </ul>
+            </TimelineItem>
+
+            <TimelineItem 
               title="SENIOR SHOPIFY & BIGCOMMERCE DEVELOPER"
-              date="2021 - Present"
-              subtitle="NESTOQ LLC, Lahore, Pakistan"
+              date="2021 - 2024"
+              subtitle="NESTOSH LLC, Lahore, Pakistan"
             >
               <ul className="list-disc pl-5 space-y-2">
                 <li>I've worked with more than 25 clients and 40+ shopify stores.</li>

@@ -26,11 +26,11 @@ const Project = ({ blok }) => {
       
       <div className="p-6">
         <h3 className="text-xl font-bold mb-2">{blok.Name}</h3>
-        <div className="mb-3">
+        {/* <div className="mb-3">
           <span className="inline-block bg-red-600 text-white text-xs px-2 py-1 rounded">
             {blok.Stack}
           </span>
-        </div>
+        </div> */}
         {blok.Description && blok.Description.content && (
           <p className="text-gray-400 mb-4">
             {blok.Description.content[0]?.content?.[0]?.text || ""}
