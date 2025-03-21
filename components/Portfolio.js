@@ -48,7 +48,7 @@ const Portfolio = ({ blok }) => {
   }, [activeTab, blok?.Proj]);  // Removed tabs from dependency array
   
   return (
-    <section className="py-16 bg-black text-white" {...storyblokEditable(blok)}>
+    <section className="py-16 bg-black text-white" {...storyblokEditable(blok)} id="portfolio">
       <div className="container mx-auto px-8">
         <div className="flex items-center justify-between mb-2">
           <h2 className="text-3xl font-bold">Portfolio</h2>

@@ -21,7 +21,7 @@ const TimelineItem = ({ date, title, subtitle, children }) => {
 
 const Resume = () => {
   return (
-    <section className="py-16 bg-black text-white">
+    <section className="py-16 bg-black text-white" id='resume'>
       <div className="container mx-auto px-8">
         <h2 className="text-3xl font-bold mb-2">Resume</h2>
         <div className="w-16 h-1 bg-red-600 mb-8"></div>
@@ -65,6 +65,16 @@ const Resume = () => {
               date="2011 - 2013"
               subtitle="Govt Islamia College, Lahore"
             />
+
+            <h3 className="text-xl font-bold mb-6">Certifications</h3>
+
+            <a href="https://www.credly.com/badges/e9433e5b-83e8-4947-adbf-7e6cb8addc06" target='_blank'>
+            <TimelineItem
+              title="Liquid Storefronts for Theme Developers"
+              date="2024"
+              subtitle="Shopify"
+            />
+            </a>
           </div>
           
           {/* Right Column */}
@@ -78,7 +88,7 @@ const Resume = () => {
             >
               <ul className="list-disc pl-5 space-y-2">
                 <li>Working as a Shopify, BigCommerce, WooCommerce, and Full-stack developer on UpWork.</li>
-                <li>I've worked with more than 25 clients and 40+ shopify stores.</li>
+                {/* <li>I've worked with more than 25 clients and 40+ shopify stores.</li> */}
                 <li>Specialize in delivering customized e-commerce solutions.</li>
                 <li>Collaborate with clients to enhance online stores and create seamless user experiences.</li>
                 <li>Focus on technical precision, responsiveness, and client-focused outcomes.</li>

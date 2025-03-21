@@ -28,12 +28,15 @@ const About = () => {
               <div className="flex items-center mb-4">
                 <FiArrowRight className="text-red-600 mr-2" />
                 <span className="font-medium">Website:</span>
-                <span className="ml-2">saturnova.com</span>
+                <span className="ml-2"><a href="https://saturnova.com/">saturnova.com</a></span>
               </div>
               <div className="flex items-center mb-4">
                 <FiArrowRight className="text-red-600 mr-2" />
                 <span className="font-medium">Phone:</span>
-                <span className="ml-2">+92 322 4703700</span>
+                <a href="tel:+923224703700" className="hover:text-red-600 transition-colors"><span className="ml-2">+92 322 4703700</span></a> 
+                
+                  {" • "}
+                  <a href="https://wa.me/923224703700" target="_blank" rel="noopener noreferrer" className="hover:text-red-600 transition-colors">WhatsApp</a>
               </div>
               <div className="flex items-center mb-4">
                 <FiArrowRight className="text-red-600 mr-2" />
@@ -51,12 +54,14 @@ const About = () => {
               <div className="flex items-center mb-4">
                 <FiArrowRight className="text-red-600 mr-2" />
                 <span className="font-medium">Degree:</span>
-                <span className="ml-2">Masters in Computer Science</span>
+                <span className="ml-2">Bachelor's in Computer Science</span>
               </div>
               <div className="flex items-center mb-4">
                 <FiArrowRight className="text-red-600 mr-2" />
                 <span className="font-medium">Email:</span>
-                <span className="ml-2">zunair700@gmail.com</span>
+                <a href="mailto:zunair700@gmail.com" className="hover:text-red-600 transition-colors">
+                  <span className="ml-2">zunair700@gmail.com</span>
+                </a>
               </div>
               <div className="flex items-center mb-4">
                 <FiArrowRight className="text-red-600 mr-2" />

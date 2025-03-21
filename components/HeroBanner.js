@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { FiChevronDown } from 'react-icons/fi';
-import logo from '../public/images/image.jpeg';
+import mainImage from '../public/images/main.png';
 
 const HeroBanner = () => {
   const scrollToAbout = () => {
@@ -32,10 +32,10 @@ const HeroBanner = () => {
       </div>
 
       {/* Right Content - Image */}
-      <div className="w-full md:w-1/2 flex justify-center md:justify-end">
-        <div className="relative w-[280px] h-[380px] md:w-[320px] md:h-[420px] lg:w-[400px] lg:h-[500px] rounded-lg overflow-hidden border-4 border-gray-800">
+      <div className="w-full md:w-1/2 flex justify-center md:justify-center">
+        <div className="relative w-[380px] h-[480px] md:w-[320px] md:h-[420px] lg:w-[400px] lg:h-[700px] rounded-lg overflow-hidden">
           <Image 
-            src={logo} 
+            src={mainImage} 
             alt="Zunair Shahid" 
             fill
             className="object-cover"

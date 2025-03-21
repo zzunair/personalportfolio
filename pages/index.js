@@ -5,6 +5,7 @@ import About from "../components/About";
 import Skills from "../components/Skills";
 import Resume from "../components/Resume";
 import Services from '../components/Services';
+import Contact from '../components/Contact';
 
 import {
   useStoryblokState,
@@ -28,11 +29,12 @@ export default function Home({ story }) {
         </Head>
         <HeroBanner />
         <About />
-        <Services />  {/* Add this line */}
+        <Services />
         <Skills />
         <Resume />
         {story && <StoryblokComponent blok={story.content} />}
       </main>
+      <Contact />
     </div>
   );
 }

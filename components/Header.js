@@ -114,7 +114,7 @@ const Header = ({ isOpen: propIsOpen, setIsOpen: propSetIsOpen }) => {
               </Link>
             </li>
             <li className="flex justify-center">
-              <Link href="/about">
+              <Link href="#about">
                 <div className="flex items-center justify-center w-[220px] px-8 py-3 transition-colors">
                   <FiUser className="mr-3 text-xl" />
                   <span>About</span>
@@ -122,7 +122,7 @@ const Header = ({ isOpen: propIsOpen, setIsOpen: propSetIsOpen }) => {
               </Link>
             </li>
             <li className="flex justify-center">
-              <Link href="/">
+              <Link href="#resume">
                 <div className="flex items-center justify-center w-[220px] px-8 py-3 transition-colors">
                   <FiFileText className="mr-3 text-xl" />
                   <span>Resume</span>
@@ -130,7 +130,7 @@ const Header = ({ isOpen: propIsOpen, setIsOpen: propSetIsOpen }) => {
               </Link>
             </li>
             <li className="flex justify-center">
-              <Link href="#">
+              <Link href="#portfolio">
                 <div className="flex items-center justify-center w-[220px] px-8 py-3 transition-colors">
                   <FiBriefcase className="mr-3 text-xl" />
                   <span>Portfolio</span>
@@ -138,7 +138,7 @@ const Header = ({ isOpen: propIsOpen, setIsOpen: propSetIsOpen }) => {
               </Link>
             </li>
             <li className="flex justify-center">
-              <Link href="/services">
+              <Link href="#services">
                 <div className="flex items-center justify-center w-[220px] px-8 py-3 transition-colors">
                   <RiServiceLine className="mr-3 text-xl" />
                   <span>Services</span>
@@ -146,7 +146,7 @@ const Header = ({ isOpen: propIsOpen, setIsOpen: propSetIsOpen }) => {
               </Link>
             </li>
             <li className="flex justify-center">
-              <Link href="/contact">
+              <Link href="#contact">
                 <div className="flex items-center justify-center w-[220px] px-8 py-3 transition-colors">
                   <FiMail className="mr-3 text-xl" />
                   <span>Contact</span>
