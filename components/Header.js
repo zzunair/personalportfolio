@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { FaGithub, FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
+import { FaGithub, FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
 import { BiHomeAlt2, BiMenu } from 'react-icons/bi';
 import { FiUser, FiFileText, FiBriefcase, FiMail, FiX } from 'react-icons/fi';
 import { RiServiceLine } from 'react-icons/ri';
 import logo from '../public/images/image.jpeg';
+import { useNavigation } from '../context/NavigationContext';
+import { SiUpwork } from 'react-icons/si';
 
-// Update the Header component to accept isOpen and setIsOpen props
 const Header = ({ isOpen: propIsOpen, setIsOpen: propSetIsOpen }) => {
   const [internalIsOpen, setInternalIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -39,6 +40,23 @@ const Header = ({ isOpen: propIsOpen, setIsOpen: propSetIsOpen }) => {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const { scrollToSection } = useNavigation();
+
+  const handleNavClick = (e, sectionId) => {
+    e.preventDefault();
+    if (sectionId === 'home') {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    } else {
+      scrollToSection(sectionId);
+    }
+    if (isMobile) {
+      setIsOpen(false);
+    }
   };
 
   return (
@@ -73,85 +91,117 @@ const Header = ({ isOpen: propIsOpen, setIsOpen: propSetIsOpen }) => {
           <h1 className="text-2xl font-bold mb-4">Zunair Shahid</h1>
           
           {/* Social Media Links */}
-          <div className="flex space-x-3">
-            <Link href="https://www.linkedin.com/in/zunair-shahid/" target='_blank'>
-              <div className="w-8 h-8 rounded-full bg-[#1E2A3A] flex items-center justify-center hover:bg-blue-600 transition-colors">
-                <FaLinkedinIn />
-              </div>
-            </Link>
-            <Link href="https://github.com/zzunair/">
-              <div className="w-8 h-8 rounded-full bg-[#1E2A3A] flex items-center justify-center hover:bg-gray-700 transition-colors">
-                <FaGithub />
-              </div>
-            </Link>
-            <Link href="https://www.facebook.com/ZzunairShahid/">
-              <div className="w-8 h-8 rounded-full bg-[#1E2A3A] flex items-center justify-center hover:bg-blue-800 transition-colors">
-                <FaFacebookF />
-              </div>
-            </Link>
-            {/* <Link href="https://instagram.com/">
-              <div className="w-8 h-8 rounded-full bg-[#1E2A3A] flex items-center justify-center hover:bg-pink-600 transition-colors">
-                <FaInstagram />
-              </div>
-            </Link> */}
-            <Link href="https://x.com/zunair_says">
-              <div className="w-8 h-8 rounded-full bg-[#1E2A3A] flex items-center justify-center hover:bg-blue-400 transition-colors">
-                <FaTwitter />
-              </div>
-            </Link>
-          </div>
+                <div className="flex space-x-3">
+                  <a 
+                    href="https://www.linkedin.com/in/zunair-shahid/" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div className="w-8 h-8 rounded-full bg-[#1E2A3A] flex items-center justify-center hover:bg-blue-600 transition-colors">
+                      <FaLinkedinIn />
+                    </div>
+                  </a>
+                  <a 
+                    href="https://github.com/zzunair/" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div className="w-8 h-8 rounded-full bg-[#1E2A3A] flex items-center justify-center hover:bg-gray-700 transition-colors">
+                      <FaGithub />
+                    </div>
+                  </a>
+                  <a 
+                    href="https://wa.me/+923224703700" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div className="w-8 h-8 rounded-full bg-[#1E2A3A] flex items-center justify-center hover:bg-green-600 transition-colors">
+                      <FaWhatsapp />
+                    </div>
+                  </a>
+                  <a 
+                    href="https://www.upwork.com/freelancers/~0129309c6c512e86ea" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div className="w-8 h-8 rounded-full bg-[#1E2A3A] flex items-center justify-center hover:bg-[#6fda44] transition-colors">
+                      <SiUpwork />
+                    </div>
+                  </a>
+                  <a 
+                    href="https://x.com/zunair_says" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div className="w-8 h-8 rounded-full bg-[#1E2A3A] flex items-center justify-center hover:bg-blue-400 transition-colors">
+                      <FaTwitter />
+                    </div>
+                  </a>
+                </div>
         </div>
         
         {/* Navigation Menu */}
         <nav className="w-full mt-1">
           <ul className="flex flex-col space-y-4">
             <li className="flex justify-center">
-              <Link href="/">
-                <div className="flex items-center justify-center w-[220px] px-8 py-1 text-blue-400 transition-colors">
-                  <BiHomeAlt2 className="mr-3 text-xl" />
-                  <span>Home</span>
-                </div>
-              </Link>
+              <a 
+                href="#home"
+                onClick={(e) => handleNavClick(e, 'home')}
+                className="flex items-center w-[220px] px-8 py-3 transition-colors hover:text-red-600 group"
+              >
+                <BiHomeAlt2 className="w-5 text-xl" />
+                <span className="ml-2">Home</span>
+              </a>
             </li>
             <li className="flex justify-center">
-              <Link href="#about">
-                <div className="flex items-center justify-center w-[220px] px-8 py-3 transition-colors">
-                  <FiUser className="mr-3 text-xl" />
-                  <span>About</span>
-                </div>
-              </Link>
+              <a 
+                href="#about"
+                onClick={(e) => handleNavClick(e, 'about')}
+                className="flex items-center w-[220px] px-8 py-3 transition-colors hover:text-red-600 group"
+              >
+                <FiUser className="w-5 text-xl" />
+                <span className="ml-2">About</span>
+              </a>
             </li>
             <li className="flex justify-center">
-              <Link href="#resume">
-                <div className="flex items-center justify-center w-[220px] px-8 py-3 transition-colors">
-                  <FiFileText className="mr-3 text-xl" />
-                  <span>Resume</span>
-                </div>
-              </Link>
+              <a 
+                href="#resume"
+                onClick={(e) => handleNavClick(e, 'resume')}
+                className="flex items-center w-[220px] px-8 py-3 transition-colors"
+              >
+                <FiFileText className="mr-3 text-xl" />
+                <span>Resume</span>
+              </a>
             </li>
             <li className="flex justify-center">
-              <Link href="#portfolio">
-                <div className="flex items-center justify-center w-[220px] px-8 py-3 transition-colors">
-                  <FiBriefcase className="mr-3 text-xl" />
-                  <span>Portfolio</span>
-                </div>
-              </Link>
+              <a 
+                href="#portfolio"
+                onClick={(e) => handleNavClick(e, 'portfolio')}
+                className="flex items-center w-[220px] px-8 py-3 transition-colors"
+              >
+                <FiBriefcase className="mr-3 text-xl" />
+                <span>Portfolio</span>
+              </a>
             </li>
             <li className="flex justify-center">
-              <Link href="#services">
-                <div className="flex items-center justify-center w-[220px] px-8 py-3 transition-colors">
-                  <RiServiceLine className="mr-3 text-xl" />
-                  <span>Services</span>
-                </div>
-              </Link>
+              <a 
+                href="#services"
+                onClick={(e) => handleNavClick(e, 'services')}
+                className="flex items-center w-[220px] px-8 py-3 transition-colors"
+              >
+                <RiServiceLine className="mr-3 text-xl" />
+                <span>Services</span>
+              </a>
             </li>
             <li className="flex justify-center">
-              <Link href="#contact">
-                <div className="flex items-center justify-center w-[220px] px-8 py-3 transition-colors">
-                  <FiMail className="mr-3 text-xl" />
-                  <span>Contact</span>
-                </div>
-              </Link>
+              <a 
+                href="#contact"
+                onClick={(e) => handleNavClick(e, 'contact')}
+                className="flex items-center w-[220px] px-8 py-3 transition-colors"
+              >
+                <FiMail className="mr-3 text-xl" />
+                <span>Contact</span>
+              </a>
             </li>
           </ul>
         </nav>

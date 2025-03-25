@@ -41,9 +41,9 @@ const Project = ({ blok }) => {
   );
 
   return blok.Link ? (
-    <Link href={blok.Link} target="_blank" rel="noopener noreferrer">
+    <a href={blok.Link} target="_blank" rel="noopener noreferrer">
       {ProjectCard}
-    </Link>
+    </a>
   ) : (
     ProjectCard
   );

@@ -1,11 +1,13 @@
 import Head from "next/head";
 import HeroBanner from "../components/HeroBanner";
-import Header from "../components/Header";
+import Header from '../components/Header';
 import About from "../components/About";
 import Skills from "../components/Skills";
 import Resume from "../components/Resume";
 import Services from '../components/Services';
 import Contact from '../components/Contact';
+import FeaturedProjects from '../components/FeaturedProjects';
+import Testimonials from "../components/Testimonials";
 
 import {
   useStoryblokState,
@@ -15,10 +17,25 @@ import {
 
 export default function Home({ story }) {
   story = useStoryblokState(story);
+  
+  // Extract featured projects from Storyblok data
+  const featuredProjects = story?.content?.body?.find(
+    item => item.component === 'Featured_portfolio'
+  )?.Featured_Projects || [];
+
+  // Current
+  // const testimonials = story?.content?.body?.find(
+  //   item => item.component === 'Testimonials'
+  // )?.Testimonial || [];
+
+  // Should be
+  const testimonials = story?.content?.body?.find(
+    item => item.component === 'Testimonials'
+  )?.Testi || [];
 
   return (
     <div className="relative">
-      {/* <Header /> */}
+      <Header />
       <main className="w-full bg-black">
         <Head>
           <title>Zunair Shahid - Portfolio</title>
@@ -29,12 +46,14 @@ export default function Home({ story }) {
         </Head>
         <HeroBanner />
         <About />
-        <Services />
+        <FeaturedProjects projects={featuredProjects} />
         <Skills />
         <Resume />
         {story && <StoryblokComponent blok={story.content} />}
+        <Services />
+        <Testimonials testimonials={testimonials} />
+        <Contact />
       </main>
-      <Contact />
     </div>
   );
 }

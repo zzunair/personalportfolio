@@ -7,6 +7,7 @@ import Page from "../components/Page";
 import Teaser from "../components/Teaser";
 import Portfolio from '../components/Portfolio';
 import Project from '../components/Project';
+import { NavigationProvider } from '../context/NavigationContext';
 
 const components = {
   feature: Feature,
@@ -28,12 +29,14 @@ storyblokInit({
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div className="relative">
-      <Header />
-      <main className="w-full md:w-[calc(100%-286px)] md:ml-[286px]">
-        <Component {...pageProps} />
-      </main>
-    </div>
+    <NavigationProvider>
+      <div className="relative flex min-h-screen overflow-hidden">
+        <Header />
+        <div className="flex-1 md:ml-[286px]">
+          <Component {...pageProps} />
+        </div>
+      </div>
+    </NavigationProvider>
   );
 }
 
