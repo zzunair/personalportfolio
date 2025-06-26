@@ -22,7 +22,7 @@ const HeroBanner = () => {
   };
 
   return (
-    <div className="relative flex flex-col md:flex-row items-center justify-between min-h-screen bg-black text-white px-8 md:px-16 lg:px-24 w-full">
+    <div className="container mx-auto px-8 relative flex flex-col md:flex-row items-center justify-between min-h-screen bg-black text-white px-8 md:px-16 lg:px-24 w-full">
       {/* Left Content - Text */}
       <div className="w-full md:w-1/2 mb-10 md:mb-0 mt-16 md:mt-0">
         <h2 className="text-gray-300 mb-2">HELLO I'M Zunair Shahid</h2>

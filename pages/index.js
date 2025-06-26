@@ -1,6 +1,5 @@
 import Head from "next/head";
 import HeroBanner from "../components/HeroBanner";
-import Header from '../components/Header';
 import About from "../components/About";
 import Skills from "../components/Skills";
 import Resume from "../components/Resume";
@@ -35,7 +34,6 @@ export default function Home({ story }) {
 
   return (
     <div className="relative">
-      <Header />
       <main className="w-full bg-black">
         <Head>
           <title>Zunair Shahid - Portfolio</title>
@@ -44,15 +42,17 @@ export default function Home({ story }) {
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
           <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
         </Head>
-        <HeroBanner />
-        <About />
-        <FeaturedProjects projects={featuredProjects} />
-        <Skills />
-        <Resume />
-        {story && <StoryblokComponent blok={story.content} />}
-        <Services />
-        <Testimonials testimonials={testimonials} />
-        <Contact />
+        <div className="main-container">
+          <HeroBanner />
+          <About />
+          <FeaturedProjects projects={featuredProjects} />
+          <Skills />
+          <Resume />
+          {story && <StoryblokComponent blok={story.content} />}
+          <Services />
+          <Testimonials testimonials={testimonials} />
+          <Contact />
+        </div>
       </main>
     </div>
   );

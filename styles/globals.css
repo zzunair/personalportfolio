@@ -65,3 +65,44 @@ a {
   font-size: 40px;
   color: #dc2626;
 }
+
+/* .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+} */
+
+
+/* Main content container that accounts for sidebar */
+.container {
+  max-width: 1600px;
+  width: 100%;
+}
+ 
+@media all and (max-width: 1600px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+@media all and (max-width: 1440px) {
+ .container {
+    max-width: 1000px;
+  } 
+ }
+
+@media all and (max-width: 1200px) {
+ .container {
+    max-width: 900px;
+  }
+}
+@media all and (max-width: 900px) {
+.container {
+    max-width: 600px;
+  }
+}
+@media all and (max-width: 600px) {
+.container {
+    max-width: 400px;
+  }
+}
