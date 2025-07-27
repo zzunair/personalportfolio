@@ -45,10 +45,10 @@ export default function Home({ story }) {
         <div className="main-container">
           <HeroBanner />
           <About />
-          <FeaturedProjects projects={featuredProjects} />
+          {/* <FeaturedProjects projects={featuredProjects} /> */}
+          {story && <StoryblokComponent blok={story.content} />}
           <Skills />
           <Resume />
-          {story && <StoryblokComponent blok={story.content} />}
           <Services />
           <Testimonials testimonials={testimonials} />
           <Contact />
